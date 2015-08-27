@@ -33,7 +33,13 @@ def update
   else
     render :edit
   end 
-end     
+end
+
+def destroy
+ @post = Post.find(params[:id])
+ @post.destroy #takes it completely out of the database
+ redirect_to posts_path #taking them back to index so that they can see the rest of the posts
+end      
 
 private
 
